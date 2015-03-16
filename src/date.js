@@ -123,6 +123,7 @@ angular.module('ui.date', [])
             }
 
             var isoDate = new Date(value);
+            isoDate.setMinutes(isoDate.getMinutes() - isoDate.getTimezoneOffset());
             return isNaN(isoDate.getTime()) ? null : isoDate;
         }
         return null;
